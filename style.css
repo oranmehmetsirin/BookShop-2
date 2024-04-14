@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --black: #1c2b3a;
+  --gray: #5c6b7a;
+  --purple: #4c3d2b;
+}
+.navbar {
+  height: 125px;
+  width: 87.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10%;
+  position: relative;
+  z-index: 999;
+}
+.title {
+  font-weight: bold;
+}
+.menu,
+.menu_icons {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.menu .active {
+  color: var(--black);
+  font-weight: bold;
+}
+.menu li,
+.menu_icons li {
+  margin: 0 10px;
+}
+.basket_icon {
+  position: relative;
+}
+.basket_count {
+  position: absolute;
+  background-color: var(--black);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18.75px;
+  color: white;
+  border-radius: 50%;
+  bottom: 0;
+  right: -12.5px;
+}
+.slider {
+  width: 87.5%;
+  margin: 0 auto;
+  height: 625px;
+}
+.slider img {
+  height: 625px;
+}
+.store {
+  width: 87.5%;
+  margin-left: 10%;
+}
+.book_card {
+  height: 412.5px;
+}
+.book_card img {
+  height: 412.5px;
+}
+.gray {
+  color: var(--gray);
+}
+.black {
+  color: var(--black);
+}
+.book_star-rate .bi-star,
+.bi-star-fill {
+  color: #eeeddd;
+  margin-right: 5px;
+  font-size: 25px;
+}
+.book_star-rate .bi-star-fill.active {
+  color: #f2c5a8;
+}
+.old_price {
+  text-decoration: line-through;
+  color: var(--gray);
+}
+.book_description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn_purple {
+  cursor: pointer;
+  border: 2.5px solid var(--purple);
+  color: var(--purple);
+  background-color: transparent;
+  font-size: 18.75px;
+  font-weight: bold;
+  transition: all 250ms ease-in-out;
+  padding: 5px 0;
+}
+.btn_purple:hover {
+  background-color: var(--purple);
+  color: white;
+}
+.filter_backround {
+  width: 625px;
+  height: 937.5px;
+  background-color: #efeefe;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+.filter {
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 687.5px;
+  justify-content: center;
+}
+.filter li {
+  color: var(--gray);
+  font-size: 18.75px;
+  margin-bottom: 37.5px;
+  cursor: pointer;
+  position: relative;
+}
+.filter li:hover {
+  color: var(--purple);
+}
+.filter li.active {
+  color: var(--purple);
+  font-size: 18.75px;
+  font-weight: bold;
+}
+filter li.active::before {
+  content: "";
+  width: 8.75px;
+  height: 8.75px;
+  border-radius: 50%;
+  background-color: var(--purple);
+  position: absolute;
+  display: inline-block;
+  left: -13.75px;
+  top: 10px;
+}
+.basket_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #5c6b7a;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -1;
+}
+.basket_modal.active {
+  opacity: 1;
+  z-index: 1000;
+}
+.basket_items {
+  height: 100vh;
+  background-color: white;
+  float: right;
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+.basket_modal.active .basket_items {
+  width: 495px;
+}
+.basket_items .bi-x {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 50px;
+  cursor: pointer;
+  color: var(--black);
+}
+.basket_title {
+  margin-top: 87.5px;
+  text-align: center;
+  font-weight: bold;
+}
+.basket_list {
+  list-style: none;
+  padding: 0 10px;
+  margin-top: 50px;
+  max-height: 750px;
+  overflow-y: auto;
+}
+.basket_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 37.5px;
+}
+.basket_item-info {
+  width: 250px;
+}
+.basket_item-info .book_name {
+  font-size: 18.75px;
+  font-weight: bold;
+}
+.basket_item-info .book_price {
+  font-size: 18.75px;
+}
+.basket_item-info .book_remove {
+  cursor: pointer;
+  color: black;
+}
+.basket_item .book_count {
+  font-size: 25px;
+  color: var(--black);
+  font-weight: bold;
+}
+.book_count .increase,
+.decrease {
+  cursor: pointer;
+  color: var(--purple);
+}
+.basket_total {
+  display: flex;
+  flex-direction: column;
+  bottom: 18.75px;
+  align-items: center;
+}
+.basket_total button {
+  width: 375px;
+  margin-bottom: 10px;
+}
